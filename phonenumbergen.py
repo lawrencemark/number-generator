@@ -36,8 +36,9 @@ def e164randomNumber(noLength):
     return f'+{areaCode}{number}'
 f = open('numbers.csv', 'w')
 
-writer = csv.writer(f)
 
+writer = csv.writer(f)
+writer.writerow(['RANDOM'])
 i = 0
 while i < 1000:
     writer.writerow([e164randomNumber(noLength)])
