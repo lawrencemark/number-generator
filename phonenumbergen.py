@@ -1,6 +1,5 @@
 import math
 import random
-import csv
 import sys
 
 try:
@@ -34,16 +33,18 @@ def e164randomNumber(noLength):
     digits = int(math.log10(areaCode))+1
     number = (randomnumber(noLength-digits))
     return f'+{areaCode}{number}'
-f = open('numbers.csv', 'w')
 
 
-writer = csv.writer(f)
-writer.writerow(['RANDOM'])
-i = 0
-while i < 1000:
-    writer.writerow([e164randomNumber(noLength)])
-    i=i+1
+
+
+with open('numbers.csv', 'w') as f:
+    i=0
+    f.write('RANDOM')
+    while i < 1000:
+        f.writelines('\n')
+        f.writelines(e164randomNumber(noLength))
+        
+        i=i+1
     
-f.close()
-
-print (f'A thousand records created for country: {country}')
+    f.close()
+    print (f'A thousand records created for country: {country}')
