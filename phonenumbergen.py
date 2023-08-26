@@ -1,11 +1,19 @@
+''' Random phone number generator and text file creation
+    Version 1.0
+    Script FileName: phonenumbergen.py
+    Supporting static areacodes for France, UK and Germany
+    Created by: Mark Lawrence
+    Data: Saturday 26 August 23
+'''
+
 import math
 import random
 import sys
 
 try:
-    country = str(sys.argv[1])
+    country = str(sys.argv[1])  
 except:
-    print('Please set country argument on command line.')
+    print('Please set country argument on the command line.')
     print('Example: phonenumbergen.py UK')
     quit()
 
@@ -19,7 +27,7 @@ elif country == 'france' or country == 'France' or country == 'FRANCE':
     noLength = 11
     areaCodes = [331,332,333,334,335,336,337,338,339]
 else:
-    print('Please set a valid country argument on command line.')
+    print('Please set a valid country argument on the command line.')
     print('Example: phonenumbergen.py UK')
     quit()
 
@@ -34,17 +42,16 @@ def e164randomNumber(noLength):
     number = (randomnumber(noLength-digits))
     return f'+{areaCode}{number}'
 
-
-
-
+#CREATE RANDOM COUNTRY NUMBERS
 with open('numbers.csv', 'w') as f:
     i=0
-    f.write('RANDOM')
-    while i < 1000:
+    requiredNumbers = 10000 #SET TO THE NUMBER OF RANDOM NUMBERS REQUIRED
+    f.write('RANDOM')  #SET TO RANDOM, SEQUENTIAL, USER
+    while i < requiredNumbers: 
         f.writelines('\n')
         f.writelines(e164randomNumber(noLength))
         
         i=i+1
     
     f.close()
-    print (f'A thousand records created for country: {country}')
+    print (f'{requiredNumbers} records created for the country: {country}')
