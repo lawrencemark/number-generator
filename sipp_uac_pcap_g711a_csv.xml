@@ -25,13 +25,13 @@
   <send retrans="500">
     <![CDATA[
 
-      INVITE sip:[field0]@[remote_ip]:[remote_port] SIP/2.0
+      INVITE sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: sut <sip:[field0]@[remote_ip]:[remote_port]>
+      From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
+      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
-      Contact: sip:sipp@[local_ip]:[local_port]
+      Contact: sip:[field0]@[local_ip]:[local_port]
       Max-Forwards: 70
       Subject: Performance Test
       Content-Type: application/sdp
@@ -67,13 +67,13 @@
   <send>
     <![CDATA[
 
-      ACK sip:[field0]@[remote_ip]:[remote_port] SIP/2.0
+      ACK sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: sut <sip:[field0]@[remote_ip]:[remote_port]>[peer_tag_param]
+      From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
+      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
-      Contact: sip:sipp@[local_ip]:[local_port]
+      Contact: sip:[field0]@[local_ip]:[local_port]
       Max-Forwards: 70
       Subject: Performance Test
       Content-Length: 0
@@ -96,10 +96,10 @@
   <send retrans="500">
     <![CDATA[
 
-      BYE sip:[field0]@[remote_ip]:[remote_port] SIP/2.0
+      BYE sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: sut <sip:[field0]@[remote_ip]:[remote_port]>[peer_tag_param]
+      From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
+      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
       Contact: sip:sipp@[local_ip]:[local_port]
@@ -120,4 +120,3 @@
   <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
 
 </scenario>
-
