@@ -25,10 +25,10 @@
   <send retrans="500">
     <![CDATA[
 
-      INVITE sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
+      INVITE sip:TONUMBER@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
       From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>
+      To: TONUMBER <sip:TONUMBER@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
       Contact: sip:[field0]@[local_ip]:[local_port]
@@ -67,10 +67,10 @@
   <send>
     <![CDATA[
 
-      ACK sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
+      ACK sip:TONUMBER@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
       From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>[peer_tag_param]
+      To: TONUMBER <sip:TONUMBER@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
       Contact: sip:[field0]@[local_ip]:[local_port]
@@ -96,10 +96,10 @@
   <send retrans="500">
     <![CDATA[
 
-      BYE sip:+441273696933@[remote_ip]:[remote_port] SIP/2.0
+      BYE sip:TONUMBER@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
       From: [field0] <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
-      To: +441273696933 <sip:+441273696933@[remote_ip]:[remote_port]>[peer_tag_param]
+      To: TONUMBER <sip:TONUMBER@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
       Contact: sip:sipp@[local_ip]:[local_port]
